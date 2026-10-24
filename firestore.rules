@@ -1,0 +1,15 @@
+rules_version = '2';
+// Firestore 보안 규칙 — 로그인한 본인만 자기 기록(users/본인uid)을 읽고 쓸 수 있어요.
+service cloud.firestore {
+  match /databases/{database}/documents {
+    match /users/{uid} {
+      allow read: if request.auth != null && request.auth.uid == uid;
+      allow write: if request.auth != null && request.auth.uid == uid
+        && request.resource.data.state is string
+        && request.resource.data.state.size() < 500000;
+    }
+    match /{other=**} {
+      allow read, write: if false;
+    }
+  }
+}
