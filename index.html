@@ -321,6 +321,14 @@ i { font-style: normal; }
 }
 .toast button { border: 0; background: var(--brand); color: #fff; border-radius: 999px; padding: 6px 12px; font-weight: 800; font-size: 13px; font-family: var(--f-kr); }
 
+/* ---------- 상단 표시 3개를 항상 한 줄에 ---------- */
+.meta { display: grid; grid-template-columns: auto minmax(0, 1fr) auto; align-items: center; gap: 6px; flex-wrap: nowrap; }
+.meta .pill-s { min-width: 0; max-width: 100%; white-space: nowrap; overflow: hidden; padding: 5px 10px; font-size: clamp(11px, 3.3vw, 13px); }
+.meta .pill-s:nth-child(2) { justify-self: center; }
+.meta .pill-s:only-child, .meta .pill-s:last-child:nth-child(2) { justify-self: end; }
+.meta .pill-s .k { overflow: hidden; text-overflow: ellipsis; min-width: 0; flex-shrink: 1; }
+.meta .pill-s .tnum, .meta .pill-s b, .meta .pill-s .r { flex-shrink: 0; font-variant-numeric: tabular-nums; }
+
 </style>
 </head>
 <body>

@@ -2,7 +2,7 @@
  * 앱 파일을 기기에 저장해 두고, 인터넷이 없어도 저장된 파일로 앱을 열어요.
  * BUILD 값은 빌드할 때 파일 내용으로 자동으로 바뀌고, 바뀌면 앱에 "새 버전" 알림이 떠요.
  */
-const BUILD = '698cfb4432';
+const BUILD = '7610051891';
 const FIREBASE_VERSION = '13.1.0'; // sync.js와 같아야 해요
 const SHELL_CACHE = 'voca-shell-' + BUILD;
 const RUNTIME_CACHE = 'voca-runtime-v1';
